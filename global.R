@@ -1,5 +1,5 @@
 library(dplyr)
 library(ggplot2)
-library(insuranceData)
 library(plotly)
-data("AutoClaims")
+library(shinydashboard)
+loans <- read.csv("LoanStats_2018Q1.csv")
