@@ -24,5 +24,16 @@ server <- function(input, output, session) {
     plot_ly(data = interestData()) %>%
       add_markers(x = ~sub_grade, y = ~Interest)
   })
+  
+  verifiedData <- reactive({
+    loans %>%
+      filter(addr_state == input$state) %>%
+      count(grade, verification_status)
+  })
+  
+  output$plot3 <- renderPlotly({
+    plot_ly(data = verifiedData()) %>%
+      add_bars(x = ~grade, y = ~n, color = ~verification_status)
+  })
 }
 

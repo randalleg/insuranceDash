@@ -15,6 +15,10 @@ ui <- dashboardPage(
       
     box(
         plotlyOutput("plot2")
+    ),
+    
+    box(
+        plotlyOutput("plot3")
     )
     )
   )
