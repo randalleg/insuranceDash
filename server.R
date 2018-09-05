@@ -9,7 +9,8 @@ server <- function(input, output, session) {
   
   output$plot <- renderPlotly({
     plot_ly(data = loanData()) %>%
-      add_bars(x = ~sub_grade, y = ~Amount)
+      add_bars(x = ~sub_grade, y = ~Amount) %>%
+      layout(title = "Loan Sub Grade")
   })
   
   interestData <- reactive({
@@ -22,7 +23,8 @@ server <- function(input, output, session) {
   
   output$plot2 <- renderPlotly({
     plot_ly(data = interestData()) %>%
-      add_markers(x = ~sub_grade, y = ~Interest)
+      add_markers(x = ~sub_grade, y = ~Interest) %>%
+      layout(title = "")
   })
   
   verifiedData <- reactive({
@@ -33,7 +35,8 @@ server <- function(input, output, session) {
   
   output$plot3 <- renderPlotly({
     plot_ly(data = verifiedData()) %>%
-      add_bars(x = ~grade, y = ~n, color = ~verification_status)
+      add_bars(x = ~grade, y = ~n, color = ~verification_status) %>%
+      layout(title = "Income verification by grade")
   })
 }
 

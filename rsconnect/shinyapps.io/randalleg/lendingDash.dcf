@@ -1,0 +1,13 @@
+name: lendingDash
+title: lendingDash
+username:
+account: randalleg
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 420070
+bundleId: 1569800
+url: https://randalleg.shinyapps.io/lendingDash/
+when: 1536108123.10492
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .~lock.LCDataDictionary.xlsx#|LCDataDictionary.xlsx|RejectStats_2018Q1.csv.zip

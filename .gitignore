@@ -1,4 +1,6 @@
 .Rproj.user
+*.xlsx
+*.Rproj
 .Rhistory
 .RData
 .Ruserdata

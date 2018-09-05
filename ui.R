@@ -1,25 +1,27 @@
 ui <- dashboardPage(
   dashboardHeader(title = "Lending Club Data"),
-  dashboardSidebar(),
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem("Grade", tabName = "grade")
+    ),
+    
+    selectInput("state", levels(loans$addr_state), label = "State")
+  ),
   dashboardBody(
-    fluidRow(
-      box(
-        selectInput("state", levels(loans$addr_state), label = "Age")
+    tabItems(
+      tabItem(tabName = "grade",
+        fluidRow(
+          box(
+            plotlyOutput("plot")
+          ),
+          box(
+              plotlyOutput("plot2")
+          ),
+          box(
+              plotlyOutput("plot3")
+          )
+        )
       )
-    ),
-    
-    fluidRow(
-      box(
-        plotlyOutput("plot")
-      ),
-      
-    box(
-        plotlyOutput("plot2")
-    ),
-    
-    box(
-        plotlyOutput("plot3")
-    )
     )
   )
 )
